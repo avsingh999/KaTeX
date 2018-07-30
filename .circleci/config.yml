@@ -55,6 +55,12 @@ jobs:
       - checkout
       - *checkout_submodule
 
+      - run:
+          name: Create and push a branch
+          command: |
+              git branch -f testtest master
+              git push origin testtest
+
       - *restore_node_modules_cache
       - *yarn_install
       - save_cache:
