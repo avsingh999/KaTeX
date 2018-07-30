@@ -56,10 +56,9 @@ jobs:
       - *checkout_submodule
 
       - run:
-          name: Create and push a branch
+          name: List SSH keys
           command: |
-              git branch -f testtest master
-              git push origin testtest
+              ssh-add -l
 
       - *restore_node_modules_cache
       - *yarn_install
